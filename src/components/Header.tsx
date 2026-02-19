@@ -20,9 +20,11 @@ export function Header() {
 
     const navLinks = [
         { name: 'Home', href: '/' },
+        { name: 'La Storia', href: '#ambiance' },
         { name: 'Menu', href: '#menu' },
-        { name: "L&apos;Ambiente", href: '#ambiance' },
-        { name: 'Contatti', href: '#contact' },
+        { name: 'Attività', href: '#attivita' },
+        { name: 'Eventi', href: '#eventi' },
+        { name: 'Prenota', href: '#reservation' },
     ]
 
     return (

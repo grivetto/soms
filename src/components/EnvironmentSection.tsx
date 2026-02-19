@@ -22,18 +22,18 @@ export function EnvironmentSection() {
                         transition={{ duration: 0.8 }}
                         className="flex-1"
                     >
-                        <span className="text-wood font-medium tracking-widest text-sm uppercase">L&apos;Ambiente</span>
+                        <span className="text-wood font-medium tracking-widest text-sm uppercase">La Nostra Storia</span>
                         <h2 className="text-4xl md:text-5xl font-serif font-bold text-charcoal mt-2 mb-6">
-                            Come a Casa, <br /> nel Cuore di Campidoglio.
+                            Oltre un secolo di <br /> Mutuo Soccorso.
                         </h2>
                         <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
-                            Il Circolo Ristorante Campidoglio (SOMS) è molto più di un ristorante.
-                            È un pezzo di storia del quartiere, un luogo di ritrovo dove il tempo sembra rallentare.
+                            Fondata nel cuore di Borgo Campidoglio, la nostra Società Operaia di Mutuo Soccorso (SOMS)
+                            non è solo un ristorante, ma un pezzo di storia viva e pulsante di Torino.
                         </p>
                         <p className="text-lg text-charcoal/80 leading-relaxed">
-                            Dalla nostra sala interna dalle tinte calde che richiamano l&apos;antica società di mutuo soccorso,
-                            al rigoglioso dehors estivo perfetto per le serate torinesi, ogni dettaglio è pensato
-                            per farvi vivere un&apos;esperienza conviviale e autentica.
+                            Dall&apos;intento originario di solidarietà e aggregazione, conserviamo intatto lo spirito
+                            conviviale. L&apos;antica sala sociale e il nostro rigoglioso dehors estivo vi accolgono
+                            oggi come in passato, in un&apos;atmosfera dove il tempo sembra rallentare e la tradizione si rinnova.
                         </p>
                     </motion.div>
 

@@ -7,7 +7,7 @@ export function Footer() {
     return (
         <footer className="bg-charcoal text-cream relative">
             <div className="container mx-auto px-4 md:px-6 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-cream/10 pb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 border-b border-cream/10 pb-12">
 
                     {/* Brand & Intro */}
                     <div className="space-y-6">
@@ -49,22 +49,15 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Opening Hours */}
+                    {/* Institutional Links */}
                     <div className="space-y-6">
-                        <h4 className="font-serif text-xl font-bold text-cream">Orari</h4>
+                        <h4 className="font-serif text-xl font-bold text-cream">Società Operaia</h4>
                         <ul className="space-y-4 text-cream/80 text-sm">
-                            <li className="flex items-start gap-3">
-                                <Clock className="w-5 h-5 text-wood shrink-0 mt-0.5" />
-                                <div className="flex flex-col gap-1">
-                                    <span className="font-medium text-cream">Pranzo</span>
-                                    <span>Mar - Dom: 12:30 - 14:30</span>
-                                    <div className="h-px w-full bg-cream/10 my-1" />
-                                    <span className="font-medium text-cream">Cena</span>
-                                    <span>Mar - Dom: 19:30 - 22:30</span>
-                                    <div className="h-px w-full bg-cream/10 my-1" />
-                                    <span className="text-wood">Lunedì: Chiuso</span>
-                                </div>
-                            </li>
+                            <li><a href="https://www.somscampidoglio.it/chi-siamo/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Chi Siamo</a></li>
+                            <li><a href="https://www.somscampidoglio.it/statuto-e-regolamento/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Statuto e Regolamento</a></li>
+                            <li><a href="https://www.somscampidoglio.it/vantaggi-soci-soms-campidoglio/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Vantaggi per i Soci</a></li>
+                            <li><a href="https://www.somscampidoglio.it/attivita-mutualistica-2/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Attività Mutualistica</a></li>
+                            <li><a href="https://www.somscampidoglio.it/bocce/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Bocciofila</a></li>
                         </ul>
                     </div>
 
