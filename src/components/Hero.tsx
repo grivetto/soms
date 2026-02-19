@@ -6,6 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from './ui/Button'
 import { cn } from '@/lib/utils'
 
+import terraImg from '../../public/images/terra.png'
+import mareImg from '../../public/images/mare.png'
+
 export function Hero() {
     const [activeTheme, setActiveTheme] = useState<'terra' | 'mare'>('terra')
 
@@ -30,7 +33,7 @@ export function Hero() {
                             {/* Placeholder for Terra Image */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
                             <Image
-                                src="/images/terra.png"
+                                src={terraImg}
                                 alt="Terra - Cucina Piemontese"
                                 fill
                                 className="object-cover"
@@ -42,7 +45,7 @@ export function Hero() {
                             {/* Placeholder for Mare Image */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
                             <Image
-                                src="/images/mare.png"
+                                src={mareImg}
                                 alt="Mare - Pesce Fresco"
                                 fill
                                 className="object-cover"
