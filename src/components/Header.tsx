@@ -5,10 +5,12 @@ import Link from 'next/link'
 import { Menu, X, Phone } from 'lucide-react'
 import { Button } from './ui/Button'
 import { cn } from '@/lib/utils'
+import { useLanguage } from '@/context/LanguageContext'
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const { t, meta, cycleLanguage } = useLanguage()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,12 +21,12 @@ export function Header() {
     }, [])
 
     const navLinks = [
-        { name: 'Home', href: '/' },
-        { name: 'La Storia', href: '#ambiance' },
-        { name: 'Menu', href: '#menu' },
-        { name: 'Attività', href: '#attivita' },
-        { name: 'Eventi', href: '#eventi' },
-        { name: 'Prenota', href: '#reservation' },
+        { name: t.nav.home, href: '/' },
+        { name: t.nav.history, href: '#ambiance' },
+        { name: t.nav.menu, href: '#menu' },
+        { name: t.nav.activities, href: '#attivita' },
+        { name: t.nav.events, href: '#eventi' },
+        { name: t.nav.reservation, href: '#reservation' },
     ]
 
     return (
@@ -49,7 +51,7 @@ export function Header() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden md:flex items-center gap-6">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
@@ -62,22 +64,55 @@ export function Header() {
                             {link.name}
                         </Link>
                     ))}
+
+                    {/* Language Switcher */}
+                    <button
+                        type="button"
+                        onClick={cycleLanguage}
+                        title={meta.title}
+                        className={cn(
+                            "flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-bold transition-all shadow-sm cursor-pointer",
+                            isScrolled
+                                ? "bg-white/80 border-wood/20 text-wood hover:bg-white"
+                                : "bg-black/30 border-white/20 text-white hover:bg-black/50 backdrop-blur-md"
+                        )}
+                    >
+                        <img src={meta.flag} alt={meta.alt} className="w-5 h-auto rounded-[2px]" />
+                        <span>{meta.code}</span>
+                    </button>
+
                     <Button variant={isScrolled ? 'default' : 'outline'} className={isScrolled ? '' : 'border-white text-white hover:bg-white hover:text-wood'}>
-                        Prenota un Tavolo
+                        {t.nav.bookTable}
                     </Button>
                 </nav>
 
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden p-2"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    {isMobileMenuOpen ? (
-                        <X className={cn("h-6 w-6", isScrolled ? "text-wood" : "text-white")} />
-                    ) : (
-                        <Menu className={cn("h-6 w-6", isScrolled ? "text-wood" : "text-white")} />
-                    )}
-                </button>
+                {/* Mobile Menu Button & Lang Switcher */}
+                <div className="flex items-center gap-3 md:hidden">
+                    <button
+                        type="button"
+                        onClick={cycleLanguage}
+                        title={meta.title}
+                        className={cn(
+                            "flex items-center gap-1.5 px-2.5 py-1 rounded-md border text-xs font-bold transition-all",
+                            isScrolled
+                                ? "bg-white border-wood/20 text-wood"
+                                : "bg-black/40 border-white/30 text-white backdrop-blur-md"
+                        )}
+                    >
+                        <img src={meta.flag} alt={meta.alt} className="w-4 h-auto rounded-[2px]" />
+                        <span>{meta.code}</span>
+                    </button>
+                    <button
+                        className="p-2"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        {isMobileMenuOpen ? (
+                            <X className={cn("h-6 w-6", isScrolled ? "text-wood" : "text-white")} />
+                        ) : (
+                            <Menu className={cn("h-6 w-6", isScrolled ? "text-wood" : "text-white")} />
+                        )}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu Overlay */}
@@ -94,7 +129,7 @@ export function Header() {
                         </Link>
                     ))}
                     <Button className="w-full max-w-xs mt-4" size="lg">
-                        Prenota Ora
+                        {t.nav.bookNow}
                     </Button>
 
                     <div className="flex items-center gap-2 text-wood/80 mt-8">
