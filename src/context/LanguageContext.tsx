@@ -304,6 +304,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     try {
+      const params = new URLSearchParams(window.location.search)
+      const urlLang = params.get('lang')?.toLowerCase() as Language
+      if (urlLang && ['it', 'en', 'es', 'th'].includes(urlLang)) {
+        setLanguageState(urlLang)
+        return
+      }
       const saved = localStorage.getItem(STORAGE_KEY) as Language | null
       if (saved && ['it', 'en', 'es', 'th'].includes(saved)) {
         setLanguageState(saved)
